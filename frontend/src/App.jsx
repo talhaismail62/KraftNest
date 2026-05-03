@@ -79,7 +79,7 @@ function App() {
 
     // 2. Send it securely to your Node backend
     try {
-      const response = await fetch('http://localhost:5001/api/book', {
+      const response = await fetch('https://kraftnest-backend-u3kk.onrender.com/api/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(bookingData)
@@ -108,7 +108,7 @@ function App() {
     };
 
     try {
-      const response = await fetch('http://localhost:5001/api/contact', {
+      const response = await fetch('https://kraftnest-backend-u3kk.onrender.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(contactData)
