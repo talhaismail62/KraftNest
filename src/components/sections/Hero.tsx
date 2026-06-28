@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/lib/site";
 import { LiveDemoCard } from "@/components/site/LiveDemoCard";
 import { HeroBackground } from "@/components/site/HeroBackground";
@@ -43,9 +44,9 @@ export function Hero() {
             >
               Get Your Free Audit →
             </a>
-            <a href="/work" className="btn btn-ghost">
+            <Link href="/work" className="btn btn-ghost">
               See Our Work
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -155,6 +155,8 @@ export function Contact() {
               </a>
               <a
                 href={mailtoLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex flex-col items-center gap-1.5 py-3 rounded-md border border-white/[0.07] hover:border-cyan-border transition-colors"
               >
                 <Mail size={16} className="text-cyan" />

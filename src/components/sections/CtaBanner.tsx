@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { site } from "@/lib/site";
 import { Reveal, RevealWords } from "@/components/site/Reveal";
 
@@ -56,9 +57,9 @@ export function CtaBanner({
           <a href={site.booking} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             {primaryLabel}
           </a>
-          <a href={secondaryHref} className="btn btn-ghost">
+          <Link href={secondaryHref} className="btn btn-ghost">
             {secondaryLabel}
-          </a>
+          </Link>
         </div>
         <p className="text-[11px] text-subtle mt-6 tracking-wide">{footnote}</p>
       </Reveal>

@@ -31,6 +31,6 @@ export const whatsappLink = `https://wa.me/${site.whatsapp}?text=${encodeURIComp
   "Hi KraftNest — I'd like to learn about building an AI employee for my business.",
 )}`;
 
-export const mailtoLink = `mailto:${site.email}?subject=${encodeURIComponent(
-  "Free AI automation audit",
-)}`;
+export const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+  site.email,
+)}&su=${encodeURIComponent("Free AI automation audit")}`;

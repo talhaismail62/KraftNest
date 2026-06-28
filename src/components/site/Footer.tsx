@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Linkedin, Instagram, Twitter, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Logo } from "./Logo";
 import { FooterWordmark } from "./FooterWordmark";
@@ -33,16 +34,28 @@ const workLinks = [...projects]
   .slice(0, 4);
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const className =
+    "group inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-white transition-colors font-light";
+  const arrow = (
+    <ArrowUpRight
+      size={12}
+      className="shrink-0 -translate-x-1 opacity-0 text-cyan transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
+    />
+  );
+
+  if (href.startsWith("/")) {
+    return (
+      <Link href={href} className={className}>
+        {children}
+        {arrow}
+      </Link>
+    );
+  }
+
   return (
-    <a
-      href={href}
-      className="group inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-white transition-colors font-light"
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
       {children}
-      <ArrowUpRight
-        size={12}
-        className="shrink-0 -translate-x-1 opacity-0 text-cyan transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
-      />
+      {arrow}
     </a>
   );
 }

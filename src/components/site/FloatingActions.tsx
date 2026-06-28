@@ -25,7 +25,7 @@ export function FloatingActions() {
       label: "Email",
       href: mailtoLink,
       icon: Mail,
-      external: false,
+      external: true,
     },
     {
       label: "Book a Call",
