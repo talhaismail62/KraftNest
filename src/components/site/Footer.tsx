@@ -60,14 +60,30 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
   );
 }
 
+function encode(data: Record<string, string>) {
+  return Object.keys(data)
+    .map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(data[k])}`)
+    .join("&");
+}
+
 function Newsletter() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
-    setSubmitted(true);
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "newsletter", email }),
+      });
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    }
   }
 
   if (submitted) {
@@ -79,23 +95,35 @@ function Newsletter() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-2 max-w-[280px]">
-      <input
-        type="email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="you@business.com"
-        className="flex-1 bg-white/[0.03] border border-white/[0.08] rounded-md px-3 py-2.5 text-[13px] text-white placeholder:text-white/25 outline-none focus:border-cyan-border transition-colors"
-      />
-      <button
-        type="submit"
-        aria-label="Subscribe"
-        className="h-[38px] w-[38px] shrink-0 rounded-md bg-cyan text-black flex items-center justify-center hover:opacity-90 transition-opacity"
+    <div className="max-w-[280px]">
+      <form
+        name="newsletter"
+        onSubmit={handleSubmit}
+        data-netlify="true"
+        className="flex items-center gap-2"
       >
-        <ArrowRight size={15} />
-      </button>
-    </form>
+        <input type="hidden" name="form-name" value="newsletter" />
+        <input
+          type="email"
+          name="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="you@business.com"
+          className="flex-1 bg-white/[0.03] border border-white/[0.08] rounded-md px-3 py-2.5 text-[13px] text-white placeholder:text-white/25 outline-none focus:border-cyan-border transition-colors"
+        />
+        <button
+          type="submit"
+          aria-label="Subscribe"
+          className="h-[38px] w-[38px] shrink-0 rounded-md bg-cyan text-black flex items-center justify-center hover:opacity-90 transition-opacity"
+        >
+          <ArrowRight size={15} />
+        </button>
+      </form>
+      {error && (
+        <p className="text-[11px] text-red-400 mt-2">Something went wrong — try again.</p>
+      )}
+    </div>
   );
 }
 
