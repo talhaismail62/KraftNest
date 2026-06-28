@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyan: #00e5ff;
+  --cyan-dim: rgba(0, 229, 255, 0.08);
+  --cyan-border: rgba(0, 229, 255, 0.18);
+  --bg: #050505;
+  --line: rgba(255, 255, 255, 0.06);
+  --line-soft: rgba(255, 255, 255, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--bg);
+  color: #f0f0f0;
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Lenis drives scrolling once active; defer to it instead of native smoothing */
+html.lenis {
+  scroll-behavior: auto;
+}
+
+::selection {
+  background: rgba(0, 229, 255, 0.2);
+  color: #fff;
+}
+
+.themed-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cyan-border) transparent;
+}
+
+.themed-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.themed-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.themed-scroll::-webkit-scrollbar-thumb {
+  background: var(--cyan-border);
+  border-radius: 999px;
+}
+
+.themed-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.32);
+}
+
+@layer components {
+  /* Refined, CONTAINED ambient background — crisp on mobile, no muddy smear */
+  .bg-field {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        46rem 32rem at 50% -8rem,
+        rgba(0, 229, 255, 0.07),
+        transparent 70%
+      ),
+      var(--bg);
+  }
+
+  .eyebrow {
+    @apply font-heading text-[10px] font-semibold uppercase tracking-[0.25em] text-cyan flex items-center gap-2.5;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply inline-block h-px w-6 bg-cyan/70;
+  }
+
+  .section-title {
+    @apply font-heading font-bold leading-[1.08] tracking-[-0.02em];
+    font-size: clamp(26px, 4vw, 44px);
+  }
+
+  .card {
+    @apply relative overflow-hidden rounded-xl border border-white/[0.07] bg-bg-2/70 backdrop-blur-sm;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+      280px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      rgba(0, 229, 255, 0.1),
+      transparent 70%
+    );
+  }
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md font-heading text-[11px] font-bold uppercase tracking-[0.12em] transition-all duration-200;
+    padding: 13px 26px;
+  }
+  .btn-primary {
+    @apply bg-cyan text-black hover:-translate-y-0.5;
+    box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.4), 0 8px 30px -8px rgba(0, 229, 255, 0.4);
+  }
+  .btn-ghost {
+    @apply border border-white/15 text-white hover:border-white/40 hover:bg-white/[0.03];
+  }
+  .btn-outline {
+    @apply border border-cyan/30 text-cyan hover:bg-cyan/[0.08];
+  }
+}
+
+/* Marquee */
+.marquee {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+  animation: tick 28s linear infinite;
+}
+@keyframes tick {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

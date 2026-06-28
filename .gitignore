@@ -2,3 +2,9 @@
 Thumbs.db
 *.log
 .netlify/
+node_modules/
+.next/
+out/
+tsconfig.tsbuildinfo
+.env
+.env.local
