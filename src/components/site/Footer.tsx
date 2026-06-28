@@ -75,7 +75,7 @@ function Newsletter() {
     e.preventDefault();
     if (!email) return;
     try {
-      await fetch("/", {
+      await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "newsletter", email }),
@@ -96,12 +96,7 @@ function Newsletter() {
 
   return (
     <div className="max-w-[280px]">
-      <form
-        name="newsletter"
-        onSubmit={handleSubmit}
-        data-netlify="true"
-        className="flex items-center gap-2"
-      >
+      <form name="newsletter" onSubmit={handleSubmit} className="flex items-center gap-2">
         <input type="hidden" name="form-name" value="newsletter" />
         <input
           type="email"

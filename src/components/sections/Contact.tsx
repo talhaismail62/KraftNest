@@ -20,7 +20,7 @@ export function Contact() {
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
     setStatus("sending");
     try {
-      await fetch("/", {
+      await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...data }),
@@ -77,7 +77,6 @@ export function Contact() {
               <form
                 name="contact"
                 onSubmit={onSubmit}
-                data-netlify="true"
                 className="flex flex-col gap-4"
               >
                 <input type="hidden" name="form-name" value="contact" />
