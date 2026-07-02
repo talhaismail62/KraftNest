@@ -150,11 +150,16 @@ export function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-16 bottom-0 bg-bg/98 backdrop-blur-xl border-t border-white/[0.06] transition-all duration-300 ${
-          open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
+        className={`lg:hidden fixed inset-x-0 top-16 bottom-0 bg-bg border-t border-white/[0.06] transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
+        style={{ backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", backgroundColor: "rgba(5,5,5,0.98)" }}
       >
-        <div className="flex flex-col px-6 py-8 gap-1">
+        <div
+          className={`flex flex-col px-6 py-8 gap-1 transition-transform duration-300 ${
+            open ? "translate-y-0" : "-translate-y-2"
+          }`}
+        >
           {nav.map((item) => (
             <Link
               key={item.href}

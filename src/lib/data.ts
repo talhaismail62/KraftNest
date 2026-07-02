@@ -25,8 +25,21 @@ export type Employee = {
 // Reframed around "AI Employees" — concrete job titles, not abstract "automation"
 export const employees: Employee[] = [
   {
-    id: "receptionist",
+    id: "web",
     role: "01",
+    title: "Web Development",
+    desc: "High-converting websites wired directly into your AI employees from day one — one connected system, not separate tools.",
+    tasks: ["Conversion-focused web design", "Booking & payment integration", "API & tool integrations"],
+    flow: [
+      { icon: "🧭", label: "Visitor lands on your site", tag: "Trigger" },
+      { icon: "🖥️", label: "Site routes them to the right AI employee", tag: "Route" },
+      { icon: "💳", label: "Booking or payment completed", tag: "Action" },
+      { icon: "📊", label: "Data synced across your stack", tag: "Sync" },
+    ],
+  },
+  {
+    id: "receptionist",
+    role: "02",
     title: "AI Voice Receptionist",
     desc: "Answers every call, books appointments, and qualifies callers — sounds human, works 24/7, never takes a sick day.",
     tasks: ["Answers inbound calls", "Books & reschedules appointments", "Routes urgent calls to you"],
@@ -39,7 +52,7 @@ export const employees: Employee[] = [
   },
   {
     id: "sdr",
-    role: "02",
+    role: "03",
     title: "AI Sales Rep (SDR)",
     desc: "Chats with website visitors, qualifies leads on the spot, and books meetings straight onto your calendar.",
     tasks: ["Live chat lead qualification", "Auto-books discovery calls", "Follows up on cold leads"],
@@ -52,7 +65,7 @@ export const employees: Employee[] = [
   },
   {
     id: "support",
-    role: "03",
+    role: "04",
     title: "AI Support Agent",
     desc: "Resolves common customer questions instantly across your website, WhatsApp, and email — escalates only what needs a human.",
     tasks: ["Answers FAQs instantly", "Handles order/booking status", "Escalates edge cases to your team"],
@@ -65,7 +78,7 @@ export const employees: Employee[] = [
   },
   {
     id: "ops",
-    role: "04",
+    role: "05",
     title: "AI Ops Assistant",
     desc: "Connects your CRM, sheets, inbox and tools so data moves itself — no more copy-pasting between apps.",
     tasks: ["Syncs CRM & spreadsheets", "Auto-updates records from forms/emails", "Sends internal alerts on Slack"],
@@ -78,7 +91,7 @@ export const employees: Employee[] = [
   },
   {
     id: "outreach",
-    role: "05",
+    role: "06",
     title: "AI Outreach Agent",
     desc: "Researches prospects and sends personalised email/LinkedIn sequences that book meetings while you sleep.",
     tasks: ["Personalised cold outreach", "Follow-up sequencing", "Meeting booking on autopilot"],
@@ -87,19 +100,6 @@ export const employees: Employee[] = [
       { icon: "🤖", label: "AI researches & personalises", tag: "AI Layer" },
       { icon: "📤", label: "Sequence sent across channels", tag: "Action" },
       { icon: "📅", label: "Reply books a meeting", tag: "Convert" },
-    ],
-  },
-  {
-    id: "web",
-    role: "06",
-    title: "Web & Systems Build",
-    desc: "High-converting websites wired directly into your AI employees from day one — one connected system, not separate tools.",
-    tasks: ["Conversion-focused web design", "Booking & payment integration", "API & tool integrations"],
-    flow: [
-      { icon: "🧭", label: "Visitor lands on your site", tag: "Trigger" },
-      { icon: "🖥️", label: "Site routes them to the right AI employee", tag: "Route" },
-      { icon: "💳", label: "Booking or payment completed", tag: "Action" },
-      { icon: "📊", label: "Data synced across your stack", tag: "Sync" },
     ],
   },
 ];
