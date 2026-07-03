@@ -43,6 +43,7 @@ export function Header() {
   }
 
   return (
+    <>
     <header
       id="top"
       className={`fixed top-0 inset-x-0 z-[100] transition-colors duration-300 ${
@@ -140,20 +141,23 @@ export function Header() {
         </button>
       </div>
 
-      {/* Scroll progress — fill only, no visible track until scrolled */}
-      <div className="h-[2px] w-full">
-        <div
-          className="h-[2px] bg-cyan/70"
-          style={{ width: `${progress}%`, transition: "width 120ms linear" }}
-        />
-      </div>
+        {/* Scroll progress — fill only, no visible track until scrolled */}
+        <div className="h-[2px] w-full">
+          <div
+            className="h-[2px] bg-cyan/70"
+            style={{ width: `${progress}%`, transition: "width 120ms linear" }}
+          />
+        </div>
+      </header>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — sibling of <header> so it is NOT nested inside the
+          header's backdrop-blur context (which broke its own blur/opacity on
+          mobile and let page content bleed through). Solid opaque background,
+          no backdrop-filter dependency, so it is always readable. */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-16 bottom-0 bg-bg border-t border-white/[0.06] transition-opacity duration-300 ${
+        className={`lg:hidden fixed inset-0 top-16 z-[99] bg-bg border-t border-white/[0.06] transition-opacity duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", backgroundColor: "rgba(5,5,5,0.98)" }}
       >
         <div
           className={`flex flex-col px-6 py-8 gap-1 transition-transform duration-300 ${
@@ -183,6 +187,6 @@ export function Header() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
