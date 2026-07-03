@@ -91,6 +91,7 @@ export function HeroBackground({ variant = "network" }: { variant?: HeroVariant 
     }
 
     function draw(now: number) {
+      raf = 0;
       const dt = lastTime ? now - lastTime : 16;
       lastTime = now;
       ctx!.clearRect(0, 0, width, height);
@@ -185,15 +186,22 @@ export function HeroBackground({ variant = "network" }: { variant?: HeroVariant 
 
       if (running) {
         raf = requestAnimationFrame(draw);
-      } else {
-        raf = 0;
       }
+    }
+
+    function start() {
+      // Reset the frame clock so dt doesn't jump after a pause, and only
+      // schedule if nothing is already queued — avoids the race where the
+      // observer re-enables `running` but a stale frame had just cleared raf,
+      // leaving the loop dead until reload (seen on mobile scroll away/back).
+      lastTime = 0;
+      if (running && !raf) raf = requestAnimationFrame(draw);
     }
 
     resize();
     seed();
     draw(performance.now());
-    if (running) raf = requestAnimationFrame(draw);
+    start();
 
     function onMouseMove(e: MouseEvent) {
       const rect = canvas!.getBoundingClientRect();
@@ -204,13 +212,19 @@ export function HeroBackground({ variant = "network" }: { variant?: HeroVariant 
       seed();
     }
 
+    function onVisibility() {
+      // Returning to a backgrounded tab (common on mobile) can leave rAF paused.
+      if (!document.hidden) start();
+    }
+
     window.addEventListener("mousemove", onMouseMove, { passive: true });
     window.addEventListener("resize", onResize);
+    document.addEventListener("visibilitychange", onVisibility);
 
     const io = new IntersectionObserver(
       ([entry]) => {
         running = entry.isIntersecting && !reduceMotion;
-        if (running && !raf) raf = requestAnimationFrame(draw);
+        if (running) start();
       },
       { threshold: 0 },
     );
@@ -221,6 +235,7 @@ export function HeroBackground({ variant = "network" }: { variant?: HeroVariant 
       cancelAnimationFrame(raf);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", onResize);
+      document.removeEventListener("visibilitychange", onVisibility);
       io.disconnect();
     };
   }, [variant]);
