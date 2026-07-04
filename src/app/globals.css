@@ -18,6 +18,25 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 229, 255, 0.25) transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.22);
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.45);
 }
 
 body {
