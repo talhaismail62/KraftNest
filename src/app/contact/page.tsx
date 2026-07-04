@@ -3,9 +3,9 @@ import { Contact } from "@/components/sections/Contact";
 import { PageHero } from "@/components/site/PageHero";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Book a Free AI Automation Audit — Contact KraftNest",
   description:
-    "Book a free 30-minute audit with KraftNest or send us a message — we reply within one business day.",
+    "Talk to KraftNest about automating your business with AI agents, chatbots, or AI voice receptionists. Book a free 30-minute audit call — we reply within one business day.",
 };
 
 export default function ContactPage() {

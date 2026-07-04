@@ -5,9 +5,9 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { PageHero } from "@/components/site/PageHero";
 
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: "AI Automation Pricing — Plans for Small Business",
   description:
-    "Simple, transparent pricing for KraftNest AI employees — Starter, Growth and Enterprise plans, no surprises.",
+    "Transparent pricing for AI employees and automation systems — Starter from $999, Growth and Enterprise plans. AI voice agents, chatbots, and workflow automation with no hidden fees.",
 };
 
 export default function PricingPage() {

@@ -4,9 +4,9 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { PageHero } from "@/components/site/PageHero";
 
 export const metadata: Metadata = {
-  title: "How It Works",
+  title: "How KraftNest Builds AI Automation — From Brief to Live in Days",
   description:
-    "From idea to a live AI employee in days, not months — see exactly how KraftNest scopes, builds and ships your automation.",
+    "See exactly how KraftNest scopes, builds and deploys AI agents, chatbots, and workflow automation for your business — from free audit call to a live AI employee in 1–2 weeks.",
 };
 
 export default function HowItWorksPage() {

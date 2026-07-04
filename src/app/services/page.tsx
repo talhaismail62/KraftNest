@@ -4,9 +4,9 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { PageHero } from "@/components/site/PageHero";
 
 export const metadata: Metadata = {
-  title: "AI Employees & Services",
+  title: "AI Employees, Automation Agents & Chatbots for Small Business",
   description:
-    "Voice receptionists, SDRs, support agents and ops assistants — six AI employee roles KraftNest builds and deploys for your business.",
+    "KraftNest builds AI employees that work 24/7 — AI voice receptionists that answer calls, AI sales agents that qualify leads, AI support chatbots, and workflow automation systems. No technical knowledge needed.",
 };
 
 export default function ServicesPage() {

@@ -4,9 +4,9 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { PageHero } from "@/components/site/PageHero";
 
 export const metadata: Metadata = {
-  title: "Our Work",
+  title: "AI Automation Projects & Case Studies — KraftNest Portfolio",
   description:
-    "Real systems and sites KraftNest has shipped — across events, hospitality, retail, healthcare and e-commerce.",
+    "Real AI automation systems, chatbots, and AI agents KraftNest has shipped — across events, hospitality, retail, healthcare, e-commerce and professional services.",
 };
 
 export default function WorkPage() {
