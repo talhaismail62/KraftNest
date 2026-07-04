@@ -477,35 +477,35 @@ export const pricingPlans: PricingPlan[] = [
 
 export const faqs = [
   {
-    q: “What exactly is an AI employee?”,
-    a: “An AI employee is a software agent built to do a specific job — answering calls, qualifying leads, handling customer support, or managing repetitive ops tasks — automatically, 24/7, without a salary or sick days. Unlike a simple chatbot, an AI employee can reason, use tools, and complete multi-step workflows.”,
+    q: "What exactly is an AI employee?",
+    a: "An AI employee is a software agent built to do a specific job — answering calls, qualifying leads, handling customer support, or managing repetitive ops tasks — automatically, 24/7, without a salary or sick days. Unlike a simple chatbot, an AI employee can reason, use tools, and complete multi-step workflows.",
   },
   {
-    q: “How is KraftNest different from Zapier or Make.com?”,
-    a: “Zapier and Make automate trigger-action flows between apps. KraftNest builds AI agents that can hold conversations, make decisions, adapt to context, and complete complex tasks — not just move data from A to B. Think of it as the difference between a conveyor belt and a trained employee.”,
+    q: "How is KraftNest different from Zapier or Make.com?",
+    a: "Zapier and Make automate trigger-action flows between apps. KraftNest builds AI agents that can hold conversations, make decisions, adapt to context, and complete complex tasks — not just move data from A to B. Think of it as the difference between a conveyor belt and a trained employee.",
   },
   {
-    q: “What kinds of AI automation do you build?”,
-    a: “We build AI voice receptionists that answer inbound calls, AI sales agents (SDRs) that qualify leads via chat or voice, AI customer support agents, workflow automation systems, and AI chatbots for websites and WhatsApp. We also build full web systems and SaaS tools that incorporate AI.”,
+    q: "What kinds of AI automation do you build?",
+    a: "We build AI voice receptionists that answer inbound calls, AI sales agents (SDRs) that qualify leads via chat or voice, AI customer support agents, workflow automation systems, and AI chatbots for websites and WhatsApp. We also build full web systems and SaaS tools that incorporate AI.",
   },
   {
-    q: “What industries do you work with?”,
-    a: “We've built AI automation for med spas, dental clinics, hospitality businesses, events companies, retail stores, e-commerce brands, and staffing agencies. If your business has repetitive calls, chats, or data tasks, we can automate them.”,
+    q: "What industries do you work with?",
+    a: "We've built AI automation for med spas, dental clinics, hospitality businesses, events companies, retail stores, e-commerce brands, and staffing agencies. If your business has repetitive calls, chats, or data tasks, we can automate them.",
   },
   {
-    q: “How long does it take to build an AI agent or chatbot?”,
-    a: “Most single AI agents — a voice receptionist, a lead-qualification chatbot, or a support bot — go live in 1–2 weeks. More complex multi-agent workflow systems typically take 3–5 weeks depending on integrations required.”,
+    q: "How long does it take to build an AI agent or chatbot?",
+    a: "Most single AI agents — a voice receptionist, a lead-qualification chatbot, or a support bot — go live in 1–2 weeks. More complex multi-agent workflow systems typically take 3–5 weeks depending on integrations required.",
   },
   {
-    q: “How much does AI automation cost for a small business?”,
-    a: “Projects start from $999 for a Starter AI system. Ongoing AI agents run from $299/month. Every engagement starts with a free audit call so you know exactly what you're getting before committing.”,
+    q: "How much does AI automation cost for a small business?",
+    a: "Projects start from $999 for a Starter AI system. Ongoing AI agents run from $299/month. Every engagement starts with a free audit call so you know exactly what you're getting before committing.",
   },
   {
-    q: “Can an AI voice receptionist actually answer real calls and book appointments?”,
-    a: “Yes. Our AI voice agents handle real inbound phone calls, answer questions in natural conversation, qualify callers, and book appointments directly into your calendar — no human needed. They work around the clock and never miss a call.”,
+    q: "Can an AI voice receptionist actually answer real calls and book appointments?",
+    a: "Yes. Our AI voice agents handle real inbound phone calls, answer questions in natural conversation, qualify callers, and book appointments directly into your calendar — no human needed. They work around the clock and never miss a call.",
   },
   {
-    q: “Do I need to be technical to use an AI automation system?”,
-    a: “No. We handle all setup, integration, training, and documentation. You describe your process and goals — we build and deploy the system. After handoff, you get a full walkthrough so your team can use it without any technical knowledge.”,
+    q: "Do I need to be technical to use an AI automation system?",
+    a: "No. We handle all setup, integration, training, and documentation. You describe your process and goals — we build and deploy the system. After handoff, you get a full walkthrough so your team can use it without any technical knowledge.",
   },
 ];
