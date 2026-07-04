@@ -25,7 +25,10 @@ export function Hero() {
               { text: "We" },
               { text: "Build" },
               { text: "AI", className: "text-cyan" },
-              { text: "Employees.", className: "text-cyan" },
+              { text: "Employees,", className: "text-cyan" },
+              { text: "Agents", className: "text-cyan" },
+              { text: "&" },
+              { text: "Automations.", className: "text-cyan" },
             ]}
           />
 

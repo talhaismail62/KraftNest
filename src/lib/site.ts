@@ -2,7 +2,7 @@
 export const site = {
   name: "KraftNest",
   sub: "Automations",
-  slogan: "We Build AI Employees",
+  slogan: "We Build AI Employees, Agents & Automations",
   domain: "kraftnest.co",
   url: "https://kraftnest.co",
   description:
