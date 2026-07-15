@@ -25,6 +25,8 @@ const cols = [
       { label: "Our Work", href: "/work" },
       { label: "Pricing", href: "/pricing" },
       { label: "Contact", href: "/contact" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Data Deletion", href: "/data-deletion" },
     ],
   },
 ];
